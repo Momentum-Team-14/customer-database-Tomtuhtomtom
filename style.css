@@ -1,11 +1,25 @@
+body {
+    font-family: sans-serif;
+}
+header {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
 .MainPage {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .entries {
-    /* border: 1px solid purple;     KEEP NO BORDER FOR 25% TO WORK */
-    height: 25rem;
+    height: 28rem;
     width: 25%;
+}
+
+.pics {
+    border-radius: 50%;
+    transform: rotate(35deg);
+    height: 130px;
+    width: 150px;
+    border: 1px solid red;
 }
