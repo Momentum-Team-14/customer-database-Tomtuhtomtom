@@ -1,0 +1,18 @@
+.MainPage {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.row {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.entry {
+    /* border: 1px solid purple;     KEEP NO BORDER FOR 25% TO WORK */
+    height: 25rem;
+    width: 25%;
+}
