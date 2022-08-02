@@ -23,9 +23,6 @@ function bringUpCustomers (customerArray) {
                 customerAbrState = state.abbreviation;
             }
         }
-        //Convert dates
-        let dobDate = moment(customer.dob.date).format('MMM D, Y');
-        let custDate = moment(customer.registered.date).format('MMM D, Y');
         //entering information for elements
         imageBox.src = customer.picture.large;
         nameBox.innerText = `${customer.name.first.charAt(0).toUpperCase() 
@@ -34,8 +31,8 @@ function bringUpCustomers (customerArray) {
         emailBox.innerText = `${customer.email}`;
         addressBox.innerText = `${customer.location.street.number} ${customer.location.street.name}
                                 ${customer.location.city} ${customerAbrState} ${customer.location.postcode}`;
-        dateBox.innerText = `DOB: ${dobDate}
-                            Customer Since: ${custDate}`;
+        dateBox.innerText = `DOB: ${moment(customer.dob.date).format('MMM D, Y')}
+                                    Customer Since: ${moment(customer.registered.date).format('MMM D, Y')}`
         //appending elements
         mainPage.appendChild(entryBox);
         entryBox.appendChild(imageBox);
