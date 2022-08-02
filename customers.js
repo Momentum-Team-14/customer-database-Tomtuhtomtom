@@ -550,5 +550,51 @@ const customers = [
       thumbnail: 'https://randomuser.me/api/portraits/thumb/men/81.jpg'
     },
     nat: 'US'
+  },
+  {
+    name: {
+      title: 'mr',
+      first: 'bob',
+      last: 'belcher'
+    },
+    location: {
+      street: {
+        number: 123,
+        name: 'Ocean Ave'
+      },
+      city: "Seymour's Bay",
+      state: 'California',
+      country: 'United States',
+      postcode: 94016,
+      coordinates: {
+        latitude: '37.7749',
+        longitude: '122.4194'
+      },
+      timezone: {
+        offset: '-7:00',
+        description: 'Pacific Daylight Time'
+      }
+    },
+    email: 'bob.belcher.@bobsburgers.com',
+    dob: {
+      date: '1976-04-20T21:25:32.113Z',
+      age: 46
+    },
+    registered: {
+      date: '2012-11-12T08:36:40.026Z',
+      age: 9
+    },
+    phone: '(555)-789-1111',
+    cell: '(555)-789-2222',
+    id: {
+      name: 'SSN',
+      value: '987-65-4321'
+    },
+    picture: {
+      large: 'Bob-Belcher-bobs-burgers-38510372-849-1080.jpeg',
+      medium: 'https://randomuser.me/api/portraits/med/men/81.jpg',
+      thumbnail: 'https://randomuser.me/api/portraits/thumb/men/81.jpg'
+    },
+    nat: 'US'
   }
 ]
