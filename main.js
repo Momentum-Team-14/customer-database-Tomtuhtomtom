@@ -8,37 +8,41 @@ function bringUpCustomers (customerArray) {
         let nameBox = document.createElement('h1');
         let emailBox = document.createElement('h2');
         let addressBox = document.createElement('p');
-        let dobBox = document.createElement('p');
-        let custDateBox = document.createElement('p');
+        let dateBox = document.createElement('p');
         //adding classes to elements created
         entryBox.classList.add("entries");
         imageBox.classList.add("pics");
         nameBox.classList.add("names");
         emailBox.classList.add("emails");
         addressBox.classList.add("addresses");
-        dobBox.classList.add("dobs");
-        custDateBox.classList.add("custDates");
+        dateBox.classList.add("dobs");
+        //Change state to abbreviation
+        let customerAbrState = '';
+        for (let state of usStates) {
+            if (customer.location.state.toUpperCase() === state.name) {
+                customerAbrState = state.abbreviation;
+            }
+        }
+        //Convert dates
+        let dobDate = moment(customer.dob.date).format('MMM D, Y');
+        let custDate = moment(customer.registered.date).format('MMM D, Y');
         //entering information for elements
         imageBox.src = customer.picture.large;
         nameBox.innerText = `${customer.name.first.charAt(0).toUpperCase() 
-                            + customer.name.first.slice(1)} 
-                            ${customer.name.last.charAt(0).toUpperCase() 
+                            + customer.name.first.slice(1)} ${customer.name.last.charAt(0).toUpperCase() 
                             + customer.name.last.slice(1)}`;
         emailBox.innerText = `${customer.email}`;
         addressBox.innerText = `${customer.location.street.number} ${customer.location.street.name}
-                                ${customer.location.city} ${customer.location.state} ${customer.location.postcode}`;
-        dobBox.innerText = `${customer.dob.date}`;
-        custDateBox.innerText = `Customer Since: ${customer.registered.date}`;
+                                ${customer.location.city} ${customerAbrState} ${customer.location.postcode}`;
+        dateBox.innerText = `DOB: ${dobDate}
+                            Customer Since: ${custDate}`;
         //appending elements
         mainPage.appendChild(entryBox);
         entryBox.appendChild(imageBox);
         entryBox.appendChild(nameBox);
         entryBox.appendChild(emailBox);
         entryBox.appendChild(addressBox);
-        entryBox.appendChild(dobBox);
-        entryBox.appendChild(custDateBox)
-        
+        entryBox.appendChild(dateBox);
     }
 }
-
 bringUpCustomers(customers);
